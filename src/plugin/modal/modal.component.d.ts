@@ -1,0 +1,31 @@
+import { Renderer, OnInit, OnDestroy, ElementRef } from '@angular/core';
+import { ModalContainerDirective } from './modal.directive';
+import { Observable } from 'rxjs';
+import { DocumentRef } from '../document-ref/document-ref.service';
+import { Router } from '@angular/router';
+export declare class ModalComponent implements OnInit, OnDestroy {
+    private doc;
+    private renderer;
+    private router;
+    modalContainerHost: ModalContainerDirective;
+    mdalOuter: ElementRef;
+    id: string;
+    title: string;
+    width: string;
+    hideClose: boolean;
+    hideTitle: boolean;
+    backdropCloseable: boolean;
+    beforeHidden: () => boolean | Promise<boolean> | Observable<boolean>;
+    noHeaderShadow: boolean;
+    iconCls: any;
+    constructor(doc: DocumentRef, renderer: Renderer, router: Router);
+    routerChangeEvent: any;
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    onHidden(): void;
+    canHideModel(): Promise<boolean>;
+    onModalClick: ($event: any) => void;
+    setHeaderShadow(has: any): any;
+    hide(): void;
+    show(): void;
+}

@@ -1,0 +1,35 @@
+import { OnInit, EventEmitter, Renderer } from '@angular/core';
+import { DcEventService } from '../broadcast/broadcast.service';
+import { ActivatedRoute, Router } from '@angular/router';
+export declare class HeaderComponent implements OnInit {
+    private renderer;
+    private broadcast;
+    private router;
+    private activeRoute;
+    userInfo: any;
+    searchKey: string;
+    userMenuData: any;
+    leftMenuStatus: boolean;
+    toggleLeftMenuEvent: EventEmitter<{}>;
+    searchResult: EventEmitter<{}>;
+    userMenu: EventEmitter<{}>;
+    contactus: EventEmitter<{}>;
+    hideSearchDropTimer: any;
+    _searchResults: any;
+    searchResults: any;
+    showResultFlag: boolean;
+    isOpen: boolean;
+    keyword: string;
+    toggleUserMenu: boolean;
+    clickUs(): void;
+    constructor(renderer: Renderer, broadcast: DcEventService, router: Router, activeRoute: ActivatedRoute);
+    ngOnInit(): void;
+    toggleUserMenuEvent(ev: any): void;
+    onDocumentClick(ev: any): void;
+    showSearchResultDrop(ev: any): void;
+    hideSearchResultDrop(): void;
+    selectResult(ev: any, res: any): void;
+    sendToggleLeftMenu(): void;
+    sendSearchResult(): void;
+    sendUserMenu(menu: any): void;
+}

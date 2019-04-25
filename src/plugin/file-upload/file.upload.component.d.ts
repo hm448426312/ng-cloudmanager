@@ -1,0 +1,32 @@
+import { OnInit, EventEmitter, ElementRef } from '@angular/core';
+import { FileUploader } from 'ng2-file-upload';
+import { FileItem } from 'ng2-file-upload/file-upload/file-item.class';
+export declare class FileUploadComponent implements OnInit {
+    selectedFiles: any;
+    fileAcceptType: any;
+    multiple: boolean;
+    fileMaxSize: number;
+    showList: boolean;
+    checkBak: any;
+    _options: any;
+    uploader: FileUploader;
+    acceptTypeArr: string[];
+    _acceptType: any;
+    acceptType: any;
+    fileChangeEvent: EventEmitter<{}>;
+    beforeUpload: EventEmitter<{}>;
+    success: EventEmitter<{}>;
+    error: EventEmitter<{}>;
+    progress: EventEmitter<{}>;
+    options: any;
+    fileUploadInput: ElementRef;
+    ngOnInit(): void;
+    selectedFileOnChanged(event: any): void;
+    checkFileItem(fileItem: any): void;
+    outputFileChangeEvent(fileItem: any): void;
+    clearFileItem(fileItem?: any): void;
+    beforeUploadItem(fileItem: FileItem): void;
+    successItem(event: any, res: string): void;
+    errorItem(event: any, res: string): void;
+    progressItem(fileItem: FileItem, progress: any): void;
+}
