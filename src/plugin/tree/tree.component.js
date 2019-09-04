@@ -403,6 +403,11 @@ var TreeComponent = (function () {
                 theI.isHide = false;
                 hasFlag = true;
             }
+            else {
+                if (!theI[this.keyChild]) {
+                    theI.isHide = true;
+                }
+            }
             if (theI[this.keyChild]) {
                 var flag = {
                     hasFlag: true
